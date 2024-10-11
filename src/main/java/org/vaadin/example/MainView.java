@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.html.Paragraph;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
@@ -21,12 +20,7 @@ public class MainView extends VerticalLayout {
         TextField textField = new TextField("Dein Name");
         textField.addClassName("bordered");
 
-        Button button = new Button("Sage hallo!", new ComponentEventListener<ClickEvent<Button>>() {
-            @Override
-            public void onComponentEvent(ClickEvent<Button> buttonClickEvent) {
-                add(new Paragraph(service.greet(textField.getValue())));
-            }
-        });
+        Button button = new Button("Sage hallo!", (ComponentEventListener<ClickEvent<Button>>) buttonClickEvent -> add(new Paragraph(service.greet(textField.getValue()))));
 
         // Statt die Schaltfläche zu betätigen, kann auch die Enter-Taste gedrückt werden.
         button.addClickShortcut(Key.ENTER);
