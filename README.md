@@ -1,4 +1,6 @@
 # Vaadin Demo
+# SerialisationDemo
+![Build-Status](https://github.com/mflingelli/VaadinDemo/actions/workflows/maven.yml/badge.svg)
 
 Diese Anwendung zeigt, wie Spring Boot verwendet werden kann, um eine Vaadin-Anwendung
 zur Verfügung zu stellen.
